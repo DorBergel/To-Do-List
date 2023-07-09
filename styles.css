@@ -1,0 +1,16 @@
+body{
+    background-color: bisque !important;
+}
+
+#header{
+    margin: 30px 10px;
+}
+
+#Plate{
+    background-color: gray;
+    margin: 7%;
+}
+
+.close_btn{
+    float: right;
+}
