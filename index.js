@@ -1,52 +1,52 @@
-var close = document.getElementsByClassName('close_btn');
-var check_box_i = document.getElementsByClassName('form-check-input');
-var i;
 
-function newElement(){
-  let uInput = document.getElementById('userInput').value;
-  let li = document.createElement('li');
-  let t = document.createTextNode(uInput);
-  let check_btn = document.createElement('input')
 
-  check_btn.className = 'form-check-input';
-  check_btn.type = "checkbox";
+function addTask(){
 
-  li.appendChild(check_btn);
-  li.appendChild(t);
-  li.className = 'list-group-item';
-
-  if(uInput == ""){
-    alert("Please enter text");
-  }
-  else{
-    document.getElementById('mainList').appendChild(li);
-  }
-
-  
-
-  document.getElementById('userInput').value = "";
-
-  let span = document.createElement('span');
-  t = document.createTextNode('\u00D7');
-  span.className = "close_btn";
-  
-  span.appendChild(t);
-  li.appendChild(span);
-
-  for(i=0;i<close.length; i++)
-  {
-    close[i].onclick = function(){
-      let current_li = this.parentElement;
-      current_li.style.display = 'none';
+    user_input = document.getElementById('task_name_input').value;
+    document.getElementById('task_name_input').value = "";
+    
+    if(user_input == ""){
+        alert("Please enter your task");
     }
-    check_box_i[i].onclick = function(){
-      if(this.checked){
-        this.parentElement.style = 'text-decoration: line-through';
-      }
-      else{
-        this.parentElement.style = 'text-decoration: none';
-      }
+    else{
+        div_parent = document.getElementById('list_div');
+
+        task_div = document.createElement('div');
+        
+        i_check_btn = document.createElement('input');
+        i_text_span = document.createElement('span');
+        i_close_btn = document.createElement('span');
+
+        i_check_btn.type = 'checkbox';
+        i_check_btn.className = 'task_check_btn'; 
+        i_check_btn.onclick = function(){
+            if(this.checked){
+                this.parentElement.style = 'text-decoration: line-through';
+            }
+            else{
+                this.parentElement.style = 'text-decoration: none';
+            }
+        }
+
+        
+        i_text_span.appendChild(document.createTextNode(user_input));
+
+        i_close_btn.className = 'close_btn';
+        img = document.createElement('img');
+        img.setAttribute('src', 'styles/close.png');
+        img.setAttribute('class', 'close_btn');
+        i_close_btn.appendChild(img);
+        i_close_btn.onclick = function(){
+            this.parentElement.style.display = 'none';
+        }
+
+        task_div.className = 'alert alert-secondary';
+
+        task_div.appendChild(i_check_btn);
+        task_div.appendChild(i_text_span);
+        task_div.appendChild(i_close_btn);
+        
+        div_parent.appendChild(task_div);
     }
-  }
+    
 }
-

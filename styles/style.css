@@ -1,0 +1,39 @@
+.plate{
+    padding: 5% 12%;
+    /* background-color: blue; */
+}
+
+.header_div{
+    /* background-color: red; */
+    text-align: center;
+}
+
+.input_div{
+    text-align: center;
+    padding: 2% 2% 4% 2%;
+    /* background-color: green; */
+}
+
+#task_name_input{
+    margin-right: 2%;
+    width: 50%;
+}
+
+.task_check_btn{
+    margin: 2%;
+}
+
+.close_btn{
+    margin: 1.5%;
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+#list_div{
+    margin: 0% 22%;
+}
+
+body{
+    background-image: url('background.avif');
+}
